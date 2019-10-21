@@ -1,0 +1,37 @@
+<h3><a class="btn btn-secondary" href="/room"><i class="fa fa-plus"></i> Create New</a> Customer Entry</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>Checkout Time</th>
+            <th>People</th>
+            <th>Kids</th>
+            <th>Room Type</th>
+            <th>Room Number</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each roomList}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>{{this.time}}</td>
+            <td>{{this.people}}</td>
+            <td>{{this.kids}}</td>
+            <td>{{this.roomtype}}</td>
+            <td>{{this.roomnum}}</td>
+            <td>{{this.date}}</td>
+            <td>
+                <a href="/room/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/room/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
